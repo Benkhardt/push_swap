@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   dqueue.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/23 14:01:15 by dbenkhar          #+#    #+#             */
-/*   Updated: 2021/12/26 16:56:46 by dbenkhar         ###   ########.fr       */
+/*   Created: 2022/01/03 10:22:22 by dbenkhar          #+#    #+#             */
+/*   Updated: 2022/01/03 10:29:23 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef DQUEUE_H
+# define DQUEUE_H
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
+# include <stdio.h>
 # include <stdlib.h>
-# include <stdio.h> //for testing purposes 
-# include <unistd.h>
 
-typedef struct s_stack {
+// typedefs
 
-	int	*a;
-	int	*b;
+typedef struct s_elem{
+	struct s_elem	*top;
+	int				value;
+	int				id;
+	struct s_elem	*bot;
+}	t_elem;
 
-} t_stack;
+void	printlist_top(t_elem *top);
+t_elem	*create_elem_ontop(int value, t_elem *top);
+t_elem	*create_elem_onbot(int value, t_elem *bot);
 
-int	init_stacks(t_stack stack, int size, char **argv);
-
-#endif 
+#endif

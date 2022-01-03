@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   linked_list.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/23 14:01:15 by dbenkhar          #+#    #+#             */
-/*   Updated: 2021/12/26 16:56:46 by dbenkhar         ###   ########.fr       */
+/*   Created: 2021/12/26 21:25:39 by dbenkhar          #+#    #+#             */
+/*   Updated: 2021/12/29 11:25:45 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef LINKED_LIST_H
+# define LINKED_LIST_H
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
+# include <stdio.h>
 # include <stdlib.h>
-# include <stdio.h> //for testing purposes 
-# include <unistd.h>
+# include <string.h>
+# include <limits.h>
 
-typedef struct s_stack {
+typedef struct s_elem
+{
+	int				value;
+	int				id;
+	struct s_elem 	*bot;
+	struct s_elem	*top;
+}	t_elem;
 
-	int	*a;
-	int	*b;
-
-} t_stack;
-
-int	init_stacks(t_stack stack, int size, char **argv);
-
-#endif 
+#endif

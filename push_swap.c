@@ -6,8 +6,11 @@
 /*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 14:00:14 by dbenkhar          #+#    #+#             */
-/*   Updated: 2021/12/23 14:04:09 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2021/12/26 16:31:28 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "libft/libft.h"
+
+

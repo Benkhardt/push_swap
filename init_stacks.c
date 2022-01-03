@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   init_stacks.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/23 14:20:46 by dbenkhar          #+#    #+#             */
-/*   Updated: 2021/12/26 17:42:09 by dbenkhar         ###   ########.fr       */
+/*   Created: 2021/12/26 16:28:06 by dbenkhar          #+#    #+#             */
+/*   Updated: 2021/12/26 17:37:54 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
 
-int	main(int argc, char *argv[])
-{
-	int		check;
-	t_stack	stack;
-	int		i;
+/*
+** transforms arguments into integers and fills stack a.
+** Size will be the given arguments by parameters.
+** Also checks for not valid arguments and stops program
+** if any was found.
+*/
 
-	check = 1;
-	check = init_stacks(stack, argc - 1, argv);
-	if (argc < 2 || !check)
-	{
-		ft_putstr_fd("error\n", 1);
+int	init_stacks(t_stack stack, int size, char **argv)
+{
+	int	i;
+
+	stack.a = (int *)malloc(sizeof(int) * size - 1);
+	if (!stack.a)
 		return (-1);
-	}
+	stack.b = (int *)malloc(sizeof(int) * size - 1);
+	if (!stack.b)
+		return (-1);
 	i = 0;
-	while (i < argc - 1)
+	while (i < size - 1)
 	{
-		ft_putnbr_fd(stack.a[i], 1);
-		ft_putchar_fd('\n', 1);
+		*(stack.a + i) = ft_atoi(argv[i + 1]);
 		i++;
 	}
-	return (0);
+	return (1);
 }
