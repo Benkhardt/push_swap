@@ -6,13 +6,11 @@
 /*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 10:23:12 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/01/03 11:53:35 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/01/03 13:52:10 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "dqueue.h"
-
-
+#include "push_swap.h"
 
 t_elem	*create_elem_onbot(int value, t_elem *bot)
 {
@@ -85,5 +83,8 @@ int	main(int argc, char *argv[])
 	printlist(ontop);
 	printf("\n");
 	printlist_reverse(&bot);
+	printf("\n");
+	ontop = swap(ontop);
+	printlist(ontop);
 	return (0);
 }
