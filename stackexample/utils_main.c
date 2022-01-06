@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 10:23:12 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/01/06 14:37:50 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/01/06 16:04:31 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,14 @@ int	main(int argc, char *argv[])
 	t_elem	bot;
 	t_elem	*ontop;
 	t_elem	*tmp;
-	t_elem	*botb;
+	t_elem	botb;
 	t_elem	*ontopb;
 
 	bot.value = atoi(argv[argc - 1]);
 	bot.top = NULL;
 	bot.bot = NULL;
+	botb.bot = NULL;
+	botb.top = ontopb;
 	tmp = &bot;
 	argc--;
 	while (--argc > 0)
@@ -82,18 +84,23 @@ int	main(int argc, char *argv[])
 		tmp->top = ontop;
 		tmp = ontop;
 	}
-	printlist(ontop);
-	printf("\n");
-	// printlist_reverse(&bot);
+	// printlist(ontop);
 	// printf("\n");
-	swap(ontop);
+	// // printlist_reverse(&bot);
+	// // printf("\n");
+	// swap(ontop);
+	// printlist(ontop);
+	// printf("\n");
+	// rotate(ontop, &bot);
+	// printlist(ontop);
+	// printf("\n");
+	// rev_rotate(ontop, &bot);
+	// printlist(ontop); // a
+	// printf("\n");
+	ontopb = push(ontop, NULL);
+	ontop = ontop->bot;
 	printlist(ontop);
 	printf("\n");
-	rotate(ontop, &bot);
-	printlist(ontop);
-	printf("\n");
-	rev_rotate(ontop, &bot);
-	printlist(ontop);
-	printf("\n");
+	printlist(ontopb);
 	return (0);
 }

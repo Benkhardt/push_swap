@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 10:22:22 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/01/06 14:37:06 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/01/06 15:55:20 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ t_elem	*create_elem_onbot(int value, t_elem *bot);
 void	swap(t_elem *top);
 void	rotate(t_elem *top, t_elem *bot);
 void	rev_rotate(t_elem *top, t_elem *bot);
+t_elem	*push(t_elem *from, t_elem *to);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 12:49:54 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/01/06 15:37:04 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/01/06 16:04:32 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,21 @@ void	rev_rotate(t_elem *top, t_elem *bot)
 	tmp->value = value;
 }
 
-// //push from -> to (top to top)
-// //can be used on both stacks in the end
+// push from -> to (top to top)
+// can be used on both stacks in the end
+// MANDATORY: using another function to call this function in the end to cut down the old stack from where it gets pushed
 t_elem	*push(t_elem *from, t_elem *to)
 {
+	t_elem	*rtn;
+	t_elem	*tmp;
 	
+	tmp = from->bot;
+	rtn = malloc(sizeof(t_elem));
+	rtn->bot = to;
+	rtn->top = NULL;
+	rtn->value = from->value;
+	tmp->top = NULL;
+	free(from);
+	from = from->bot;
+	return (rtn); // returning new top of were it gets pushed
 }
-
-
