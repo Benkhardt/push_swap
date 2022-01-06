@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 10:23:12 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/01/03 13:52:10 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/01/06 14:37:50 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ int	main(int argc, char *argv[])
 	t_elem	bot;
 	t_elem	*ontop;
 	t_elem	*tmp;
+	t_elem	*botb;
+	t_elem	*ontopb;
 
 	bot.value = atoi(argv[argc - 1]);
 	bot.top = NULL;
@@ -82,9 +84,16 @@ int	main(int argc, char *argv[])
 	}
 	printlist(ontop);
 	printf("\n");
-	printlist_reverse(&bot);
-	printf("\n");
-	ontop = swap(ontop);
+	// printlist_reverse(&bot);
+	// printf("\n");
+	swap(ontop);
 	printlist(ontop);
+	printf("\n");
+	rotate(ontop, &bot);
+	printlist(ontop);
+	printf("\n");
+	rev_rotate(ontop, &bot);
+	printlist(ontop);
+	printf("\n");
 	return (0);
 }
