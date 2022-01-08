@@ -1,82 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_main.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 10:23:12 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/01/06 16:04:31 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/01/08 20:28:03 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_elem	*create_elem_onbot(int value, t_elem *bot)
-{
-	t_elem	*rtn;
-
-	rtn = malloc(sizeof(t_elem));
-	if (!rtn)
-		return (NULL);
-	rtn->value = value;
-	bot->bot = rtn;
-	rtn->bot = NULL;
-	rtn->top = bot;
-	return (rtn);
-}
-
-t_elem	*create_elem_ontop(int value, t_elem *top)
-{
-	t_elem	*rtn;
-
-	rtn = malloc(sizeof(t_elem));
-	if (!rtn)
-		return (NULL);
-	rtn->value = value;
-	rtn->bot = top;
-	rtn->top = NULL;
-	return (rtn);
-}
-
-static void	printlist_reverse(t_elem *bot)
-{
-	t_elem *tmp;
-
-	tmp = bot;
-	while (tmp != NULL)
-	{
-		printf("%d\n", tmp->value);
-		tmp = tmp->top;
-	}
-}
-
-static void	printlist(t_elem *top)
-{
-	t_elem	*tmp;
-
-	tmp = top;
-	while (tmp != NULL)
-	{
-		printf("%d\n", tmp->value);
-		tmp = tmp->bot;
-	}
-}
-
 int	main(int argc, char *argv[])
 {
-	t_elem	bot;
+	t_elem	bota;
 	t_elem	*ontop;
 	t_elem	*tmp;
 	t_elem	botb;
 	t_elem	*ontopb;
 
-	bot.value = atoi(argv[argc - 1]);
-	bot.top = NULL;
-	bot.bot = NULL;
+	if (argc == 1)
+		return (0);
+	if (argc < 3 || check_dup(argc, argv) || !(check_num(argc, argv)))
+	{
+		ft_putstr_fd("Error", 1);
+		return (-1);
+	}
+	bota.value = atoi(argv[argc - 1]);
+	bota.top = NULL;
+	bota.bot = NULL;
 	botb.bot = NULL;
 	botb.top = ontopb;
-	tmp = &bot;
+	tmp = &bota;
 	argc--;
 	while (--argc > 0)
 	{
