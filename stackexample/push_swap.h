@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 10:22:22 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/01/08 20:26:19 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/01/09 14:18:02 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_elem{
 	struct s_elem	*bot;
 }	t_elem;
 
+void push_swap(int argc, char **argv);
 
 t_elem	*create_elem_ontop(int value, t_elem *top);
 
