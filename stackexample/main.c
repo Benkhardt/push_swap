@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 10:23:12 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/01/09 12:42:21 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/01/09 14:05:46 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,13 @@ int	main(int argc, char *argv[])
 	t_elem	*tmp;
 	t_elem	botb;
 	t_elem	*ontopb;
-	int test = check_num(argc, argv);
-	printf("(%d)", test);
 
 	if (argc == 1)
 		return (0);
 	if (argc < 3 || check_dup(argc, argv) || check_num(argc, argv) < 1)
 	{
 
-		ft_putstr_fd("Error", 1);
+		ft_putstr_fd("Error\n", 1);
 		return (-1);
 	}
 	bota.value = atoi(argv[argc - 1]);
@@ -54,8 +52,8 @@ int	main(int argc, char *argv[])
 	// printlist(ontop);
 	// printf("\n");
 	// rev_rotate(ontop, &bot);
-	// printlist(ontop); // a
-	// printf("\n");
+	printlist(ontop); // a
+	printf("\n");
 	ontopb = push(ontop, NULL);
 	ontop = ontop->bot;
 	printlist(ontop);
