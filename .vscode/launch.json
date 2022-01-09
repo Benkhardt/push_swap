@@ -8,9 +8,9 @@
 			"type": "lldb",
 			"request": "launch",
 			"name": "Debug",
-			"program": "/Users/dbenkhar/push_swap/test",
-			"args": [],
-			"cwd": "/Users/dbenkhar/push_swap/"
+			"program": "/Users/dbenkhar/push_swap/stackexample/test",
+			"args": ["-4", "-4"],
+			"cwd": "/Users/dbenkhar/push_swap/stackexample"
 		}
 	]
 }

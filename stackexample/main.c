@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 10:23:12 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/01/08 20:28:03 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/01/09 12:42:21 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,14 @@ int	main(int argc, char *argv[])
 	t_elem	*tmp;
 	t_elem	botb;
 	t_elem	*ontopb;
+	int test = check_num(argc, argv);
+	printf("(%d)", test);
 
 	if (argc == 1)
 		return (0);
-	if (argc < 3 || check_dup(argc, argv) || !(check_num(argc, argv)))
+	if (argc < 3 || check_dup(argc, argv) || check_num(argc, argv) < 1)
 	{
+
 		ft_putstr_fd("Error", 1);
 		return (-1);
 	}
