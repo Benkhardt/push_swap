@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 12:49:54 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/01/08 20:12:48 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/01/10 12:56:24 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 // swap top two elem
 // can be used on both stacks in the end
-t_elem	start_stack(void)
-{
-	t_elem	bot;
+// t_elem	start_stack(void)
+// {
+// 	t_elem	bot;
 	
-	bot.value = 0;
-	bot.id = 0;
-	bot.bot = NULL;
-	bot.top = NULL;
-	return (bot);
-}
+// 	bot.value = 0;
+// 	bot.id = 0;
+// 	bot.bot = NULL;
+// 	bot.top = NULL;
+// 	return (bot);
+// }
 
 t_elem	*create_elem_ontop(int value, t_elem *top)
 {
@@ -35,6 +35,7 @@ t_elem	*create_elem_ontop(int value, t_elem *top)
 	rtn->value = value;
 	rtn->bot = top;
 	rtn->top = NULL;
+	rtn->lable = -1;
 	return (rtn);
 }
 
@@ -49,6 +50,7 @@ t_elem	*create_elem_onbot(int value, t_elem *bot)
 	bot->bot = rtn;
 	rtn->bot = NULL;
 	rtn->top = bot;
+	rtn->lable = -1;
 	return (rtn);
 }
 

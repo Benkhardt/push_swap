@@ -6,12 +6,11 @@
 /*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 10:58:23 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/01/09 13:01:59 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/01/10 14:03:07 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 // Description:	Checks a string for non num chars
 // Return:		- Returns 0 if str has non num chars
@@ -105,12 +104,3 @@ int	check_num(int argc, char **argv)
 		return (-1);
 	return (1);
 }
-
-// int main(int argc, char *argv[])
-// {
-// 	int test = check_dup(argc, argv);
-// 	printf("%d\n", test);
-// 	test = ft_compare(argv[1], argv[2]);
-// 	printf("%d\n", test);
-// 	return (0);
-// }

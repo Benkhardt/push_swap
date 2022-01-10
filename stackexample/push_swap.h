@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 10:22:22 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/01/09 14:18:02 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/01/10 14:03:00 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 typedef struct s_elem{
 	struct s_elem	*top;
 	int				value;
-	int				id;
+	int				lable;
 	struct s_elem	*bot;
 }	t_elem;
 
@@ -45,6 +45,8 @@ void	rev_rotate(t_elem *top, t_elem *bot);
 t_elem	*push(t_elem *from, t_elem *to);
 
 int		ft_isnum(char *str);
+
+int		is_sorted(t_elem *top);
 
 int		ft_compare(char *s1, char *s2);
 
