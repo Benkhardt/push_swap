@@ -6,14 +6,13 @@
 #    By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/10 10:39:02 by dbenkhar          #+#    #+#              #
-#    Updated: 2022/01/10 18:12:26 by dbenkhar         ###   ########.fr        #
+#    Updated: 2022/01/10 23:54:58 by dbenkhar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = test
+NAME = push_swap
 
 SRCS =	*.c
-
 
 CC = gcc
 RM = rm -f
