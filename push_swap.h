@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 10:22:22 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/01/10 14:03:00 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/01/10 18:10:51 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdio.h>
 # include <stdlib.h>
-# include "../libft/libft.h"
+# include "./libft/libft.h"
 
 // typedefs
 
@@ -33,6 +33,8 @@ t_elem	*create_elem_ontop(int value, t_elem *top);
 t_elem	*create_elem_onbot(int value, t_elem *bot);
 
 t_elem	start_stack(void);
+
+t_elem	*lable(int argc, t_elem *topa);
 
 void	printlist(t_elem *top);
 

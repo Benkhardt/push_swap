@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 14:13:12 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/01/10 14:02:55 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/01/10 18:54:55 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,30 +25,7 @@ t_elem	*find_min(t_elem *topa)
 			min = tmp;
 		tmp = tmp->bot;
 	}
-	min->lable = 0;
 	return (min);
-}
-
-t_elem	*lable(int argc, t_elem *topa)
-{
-	t_elem	*tmp1;
-	t_elem	*tmp2;
-	int		lable;
-
-	tmp1 = topa;
-	tmp2 = topa->bot;
-	lable = 0;
-	while (lable < argc)
-	{
-		while (tmp1 != NULL)
-		{
-			if (tmp1->lable == -1 && tmp2->lable == -1)
-			{
-				
-			}
-		}
-	}
-	return (topa);
 }
 
 void push_swap(int argc, char **argv)
@@ -57,15 +34,19 @@ void push_swap(int argc, char **argv)
 	t_elem botb;
 	t_elem *tmp;
 	t_elem *ontopa;
-	t_elem *ontopb = NULL;
+	t_elem *ontopb = &botb;
+	int argc2;
 
-	bota.value = atoi(argv[argc - 1]);
+	bota.value = ft_atoi(argv[argc - 1]);
+	bota.lable = -1;
+	botb.lable = -1;
 	bota.top = NULL;
 	bota.bot = NULL;
 	botb.bot = NULL;
 	botb.top = ontopb;
 	tmp = &bota;
 	argc--;
+	argc2 = argc;
 	while (--argc > 0)
 	{
 		ontopa = create_elem_ontop(ft_atoi(argv[argc]), tmp);
@@ -74,6 +55,9 @@ void push_swap(int argc, char **argv)
 	}
 	if (is_sorted(ontopa))
 		return ;
-	ontopa = lable(argc, ontopa);
+	ontopa = lable(argc2, ontopa);
+	ft_putstr_fd("stack a\n", 1);
 	printlist(ontopa);
+	ft_putstr_fd("stack b\n", 1);
+	printlist(ontopb);
 }

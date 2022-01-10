@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 12:49:54 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/01/10 12:56:24 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/01/10 18:11:33 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,7 @@ void	printlist(t_elem *top)
 	tmp = top;
 	while (tmp != NULL)
 	{
-		printf("%d\n", tmp->value);
+		printf("%d %d\n", tmp->value, tmp->lable);
 		tmp = tmp->bot;
 	}
 }
