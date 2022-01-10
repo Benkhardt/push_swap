@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 14:13:12 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/01/09 14:16:33 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/01/09 18:06:32 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ void push_swap(int argc, char **argv)
 	t_elem *tmp;
 	t_elem *ontopa;
 	t_elem *ontopb;
-
 
 	bota.value = atoi(argv[argc - 1]);
 	bota.top = NULL;
