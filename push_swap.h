@@ -5,26 +5,53 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/23 14:01:15 by dbenkhar          #+#    #+#             */
-/*   Updated: 2021/12/26 16:56:46 by dbenkhar         ###   ########.fr       */
+/*   Created: 2022/01/03 10:22:22 by dbenkhar          #+#    #+#             */
+/*   Updated: 2022/01/10 14:03:00 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include <stdio.h>
 # include <stdlib.h>
-# include <stdio.h> //for testing purposes 
-# include <unistd.h>
+# include "../libft/libft.h"
 
-typedef struct s_stack {
+// typedefs
 
-	int	*a;
-	int	*b;
+typedef struct s_elem{
+	struct s_elem	*top;
+	int				value;
+	int				lable;
+	struct s_elem	*bot;
+}	t_elem;
 
-} t_stack;
+void push_swap(int argc, char **argv);
 
-int	init_stacks(t_stack stack, int size, char **argv);
+t_elem	*create_elem_ontop(int value, t_elem *top);
 
-#endif 
+t_elem	*create_elem_onbot(int value, t_elem *bot);
+
+t_elem	start_stack(void);
+
+void	printlist(t_elem *top);
+
+void	swap(t_elem *top);
+
+void	rotate(t_elem *top, t_elem *bot);
+
+void	rev_rotate(t_elem *top, t_elem *bot);
+
+t_elem	*push(t_elem *from, t_elem *to);
+
+int		ft_isnum(char *str);
+
+int		is_sorted(t_elem *top);
+
+int		ft_compare(char *s1, char *s2);
+
+int		check_dup(int argc, char **argv);
+
+int		check_num(int argc, char **argv);
+
+#endif
