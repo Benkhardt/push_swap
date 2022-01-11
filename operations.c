@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 12:49:54 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/01/10 18:11:33 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/01/11 14:31:45 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,25 +116,58 @@ void	printlist(t_elem *top)
 	while (tmp != NULL)
 	{
 		printf("%d %d\n", tmp->value, tmp->lable);
+		if (tmp->bot == NULL && tmp->top == NULL)
+			printf("is NULL\n");
 		tmp = tmp->bot;
 	}
 }
 
 // push from -> to (top to top)
 // can be used on both stacks in the end
-// MANDATORY: using another function to call this function in the end to cut down the old stack from where it gets pushed
-t_elem	*push(t_elem *from, t_elem *to)
-{
-	t_elem	*rtn;
-	t_elem	*tmp;
+// // MANDATORY: using another function to call this function in the end to cut down the old stack from where it gets pushed
+// t_elem	*push(t_elem *from, t_elem *to)
+// {
+// 	t_elem	*rtn;
+// 	t_elem	*tmp;
 	
-	tmp = from->bot;
-	rtn = malloc(sizeof(t_elem));
-	rtn->bot = to;
-	rtn->top = NULL;
-	rtn->value = from->value;
-	tmp->top = NULL;
-	free(from);
-	from = from->bot;
-	return (rtn);
+// 	tmp = from->bot;
+// 	rtn = malloc(sizeof(t_elem));
+// 	rtn->bot = to;
+// 	if (to != NULL)
+// 		to->top = rtn;
+// 	rtn->top = NULL;
+// 	rtn->value = from->value;
+// 	tmp->top = NULL;
+// 	free(from);
+// 	return (rtn);
+// }
+
+t_elem	**push_a(t_elem **stack)
+{
+	t_elem *tmp;
+
+	tmp = stack[1]->bot;
+	stack[1]->bot = stack[2];
+	if (stack[2] != NULL)
+		stack[2]->top = stack[1];
+	stack[2] = stack[1];
+	stack[1] = tmp;
+	if (stack[1] != NULL)
+		stack[1]->top = NULL;
+	return (stack);
+}
+
+t_elem	**push_b(t_elem **stack)
+{
+	t_elem *tmp;
+
+	tmp = stack[2]->bot;
+	stack[2]->bot = stack[1];
+	if (stack[1] != NULL)
+		stack[1]->top = stack[2];
+	stack[1] = stack[2];
+	stack[2] = tmp;
+	if (stack[2] != NULL)
+		stack[2]->top = NULL;
+	return (stack);
 }
