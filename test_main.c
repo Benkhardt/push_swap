@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 10:23:12 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/01/09 14:18:50 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/01/11 14:37:43 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	main(int argc, char *argv[])
 		return (0);
 	if (argc < 3 || check_dup(argc, argv) || check_num(argc, argv) < 1)
 	{
-
 		ft_putstr_fd("Error\n", 1);
 		return (-1);
 	}

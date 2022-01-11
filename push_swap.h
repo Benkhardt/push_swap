@@ -6,7 +6,7 @@
 /*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 10:22:22 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/01/11 14:32:04 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/01/11 14:42:18 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_elem	start_stack(void);
 
 t_elem	*lable(int argc, t_elem *topa);
 
-t_elem	*sort_small_stack(t_elem *topa, t_elem *topb);
+t_elem	**sort_small_stack(t_elem **stack);
 
 t_elem	*sort_big_stack(t_elem *topa, t_elem *topb);
 
