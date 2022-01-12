@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 12:49:54 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/01/11 14:31:45 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/01/12 14:30:38 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,43 +70,23 @@ void	swap(t_elem *top)
 
 // rotate up, top gets bot and 2nd top gets top
 // can be used on both stacks in the end
-void	rotate(t_elem *top, t_elem *bot)
-{
-	int		value;
-	int		value2;
-	t_elem	*tmp;
+// void	rotate(t_elem *top, t_elem *bot)
+// {
+// 	int		value;
+// 	int		value2;
+// 	t_elem	*tmp;
 
-	tmp = bot;
-	value = top->value;
-	while (tmp->top != NULL)
-	{
-		value2 = tmp->value;
-		tmp->value = value;
-		value = value2;
-		tmp = tmp->top;
-	}
-	tmp->value = value;
-}
-
-// rotate down, bot gets top and 2nd bot gets bot
-// can be used on both stacks in the end
-void	rev_rotate(t_elem *top, t_elem *bot)
-{
-	int		value;
-	int		value2;
-	t_elem	*tmp;
-
-	tmp = top;
-	value = bot->value;
-	while (tmp->bot != NULL)
-	{
-		value2 = tmp->value;
-		tmp->value = value;
-		value = value2;
-		tmp = tmp->bot;
-	}
-	tmp->value = value;
-}
+// 	tmp = bot;
+// 	value = top->value;
+// 	while (tmp->top != NULL)
+// 	{
+// 		value2 = tmp->value;
+// 		tmp->value = value;
+// 		value = value2;
+// 		tmp = tmp->top;
+// 	}
+// 	tmp->value = value;
+// }
 
 void	printlist(t_elem *top)
 {

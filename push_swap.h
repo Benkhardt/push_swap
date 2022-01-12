@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 10:22:22 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/01/11 14:42:18 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/01/12 15:11:35 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,17 @@ void	printlist(t_elem *top);
 
 void	swap(t_elem *top);
 
-void	rotate(t_elem *top, t_elem *bot);
+// void	rotate(t_elem *top, t_elem *bot);
 
-void	rev_rotate(t_elem *top, t_elem *bot);
+t_elem	**rotate_a(t_elem **stack);
 
-// t_elem	*push(t_elem *from, t_elem *to);
+t_elem	**rev_rotate_a(t_elem **stack);
+
+t_elem	**rotate_b(t_elem **stack);
+
+t_elem	**rev_rotate_b(t_elem **stack);
+
+// void	rev_rotate(t_elem *top, t_elem *bot);
 
 int		ft_isnum(char *str);
 
