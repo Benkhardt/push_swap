@@ -29,6 +29,7 @@ clean :
 	$(MAKE) clean -C ./libft
 
 fclean : clean
+	$(MAKE) fclean -C ./libft
 	${RM} ${NAME}
 
 re : fclean all
