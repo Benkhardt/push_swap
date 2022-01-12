@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 14:13:12 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/01/11 14:55:45 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/01/11 20:39:55 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ void push_swap(int argc, char **argv)
 	if (is_sorted(stack[1]))
 		return ;
 	stack[1] = lable(argc2, stack[1]);
+	printlist(stack[1]);
+	ft_putchar_fd('\n', 1);
 	if (argc2 < 6)
 	{
 		stack = sort_small_stack(stack);
@@ -65,16 +67,14 @@ void push_swap(int argc, char **argv)
 	// // 	stack[2] = push(stack[1], stack[2]);
 	// // stack[1] = stack[1]->bot;
 	// // stack[1]->top = NULL;
-	// ft_putstr_fd("stack a\n", 1);
-	// printlist(stack[1]);
-	// ft_putstr_fd("stack b\n", 1);
-	// printlist(stack[2]);
+	ft_putstr_fd("stack a\n", 1);
+	printlist(stack[1]);
+	ft_putstr_fd("stack b\n", 1);
+	printlist(stack[2]);
 	// while (stack[2] != NULL)
 	// 	stack = push_b(stack);
 	// ft_putstr_fd("stack a\n", 1);
 	// printlist(stack[1]);
 	// ft_putstr_fd("stack b\n", 1);
 	// printlist(stack[2]);
-	}
-	// stack[2] = push(ontop, NULL);
-	// ontop = ontop->bot;
+}

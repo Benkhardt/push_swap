@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_small_stack.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 11:35:52 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/01/11 14:51:05 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/01/11 20:39:11 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ t_elem	**sort_small_stack(t_elem **stack)
 	while (((stack[1]->lable >> shift) & 1) == 0)
 	{
 		stack = push_a(stack);
-		printlist(stack[1]);
-		ft_putchar_fd('\n', 1);
-		printlist(stack[2]);
-		ft_putchar_fd('\n', 1);
+		// printlist(stack[1]);
+		// ft_putchar_fd('\n', 1);
+		// printlist(stack[2]);
+		// ft_putchar_fd('\n', 1);
 	}
 	return (stack);
 }
