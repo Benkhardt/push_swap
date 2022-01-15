@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_arg.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 10:58:23 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/01/10 14:03:07 by dbenkhar         ###   ########.fr       */
+/*   Updated: 2022/01/15 12:56:29 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 // Description:	Checks a string for non num chars
 // Return:		- Returns 0 if str has non num chars
 // 				- Returns 1 if str is numeric
-int	ft_isnum(char *str)
+static int	ft_isnum(char *str)
 {
 	int	i;
 
@@ -34,22 +34,18 @@ int	ft_isnum(char *str)
 //				  s2 aren't the same
 //				- Returns 1 when dup
 //				  was found
-int ft_compare(char *s1, char *s2)
+static int	ft_compare(char *s1, char *s2)
 {
 	int	i;
-	int j;
 
 	i = 0;
-	j = 0;
+	if (ft_strlen(s1) != ft_strlen(s2))
+		return (0);
 	while (s1[i] != '\0')
 	{
-		while (s2[j] != '\0')
-		{
-			if (s1[i] != s2[j])
-				return (0);
-			j++;
-			i++;
-		}
+		if (s1[i] != s2[i])
+			return (0);
+		i++;
 	}
 	return (1);
 }
@@ -102,5 +98,22 @@ int	check_num(int argc, char **argv)
 	}
 	if (check > 0)
 		return (-1);
+	return (1);
+}
+
+int	is_sorted(t_elem *top)
+{
+	t_elem	*tmp1;
+	t_elem	*tmp2;
+
+	tmp1 = top;
+	tmp2 = top->bot;
+	while (tmp2 != NULL)
+	{
+		if (tmp1->value > tmp2->value)
+			return (0);
+		tmp1 = tmp1->bot;
+		tmp2 = tmp2->bot;
+	}
 	return (1);
 }

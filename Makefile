@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/01/10 10:39:02 by dbenkhar          #+#    #+#              #
-#    Updated: 2022/01/10 23:54:58 by dbenkhar         ###   ########.fr        #
+#    Created: 2022/01/15 11:17:05 by dbenkhar          #+#    #+#              #
+#    Updated: 2022/01/15 11:17:35 by dbenkhar         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRCS =	*.c
 CC = gcc
 RM = rm -f
 
-CFLAGS = -Wall -Werror -Wextra -g
+CFLAGS = -Wall -Wextra -Werror -g
 
 LIBFT = ./libft/libft.a
 

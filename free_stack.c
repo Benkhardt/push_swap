@@ -1,53 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lable.c                                            :+:      :+:    :+:   */
+/*   free_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/15 11:16:33 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/01/15 11:22:53 by dbenkhar         ###   ########.fr       */
+/*   Created: 2022/01/15 12:11:13 by dbenkhar          #+#    #+#             */
+/*   Updated: 2022/01/15 12:54:31 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static t_elem	*get_next_nlabled(t_elem *topa)
+static void	free_stack_a(t_elem **stack)
 {
 	t_elem	*tmp1;
 	t_elem	*tmp2;
 
-	tmp1 = topa;
-	tmp2 = topa->bot;
-	while (tmp1->lable != -1 && tmp2 != NULL)
+	tmp1 = stack[1];
+	while (tmp1 != NULL)
 	{
-		tmp1 = tmp2;
 		tmp2 = tmp1->bot;
+		free(tmp1);
+		tmp1 = tmp2;
 	}
-	return (tmp1);
 }
 
-t_elem	*lable(int argc, t_elem *topa)
+static void	free_stack_b(t_elem **stack)
 {
 	t_elem	*tmp1;
 	t_elem	*tmp2;
-	int		lable;
 
-	tmp1 = topa;
-	tmp2 = topa->bot;
-	lable = 0;
-	while (lable < argc)
+	tmp1 = stack[2];
+	while (tmp1 != NULL)
 	{
-		while (tmp2 != NULL)
-		{
-			if (tmp1->value > tmp2->value && tmp2->lable == -1)
-				tmp1 = tmp2;
-			tmp2 = tmp2->bot;
-		}
-		tmp1->lable = lable;
-		lable++;
-		tmp1 = get_next_nlabled(topa);
 		tmp2 = tmp1->bot;
+		free(tmp1);
+		tmp1 = tmp2;
 	}
-	return (topa);
+}
+
+void	free_stacks(t_elem **stack)
+{
+	free_stack_a(stack);
+	free_stack_b(stack);
 }

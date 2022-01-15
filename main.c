@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_sorted.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbenkhar <dbenkhar@student.42>             +#+  +:+       +#+        */
+/*   By: dbenkhar <dbenkhar@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/10 11:24:32 by dbenkhar          #+#    #+#             */
-/*   Updated: 2022/01/10 11:30:36 by dbenkhar         ###   ########.fr       */
+/*   Created: 2022/01/15 11:16:26 by dbenkhar          #+#    #+#             */
+/*   Updated: 2022/01/15 12:57:05 by dbenkhar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_sorted(t_elem *top)
+int	main(int argc, char **argv)
 {
-	t_elem *tmp1;
-	t_elem *tmp2;
-
-	tmp1 = top;
-	tmp2 = top->bot;
-	while (tmp2 != NULL)
+	if (argc == 1)
+		return (0);
+	if (argc < 3 || check_dup(argc, argv) || check_num(argc, argv) < 1)
 	{
-		if (tmp1->value > tmp2->value)
-			return (0);
-		tmp1 = tmp1->bot;
-		tmp2 = tmp2->bot;
-	}
-	return (1);
+		ft_putstr_fd("Error\n", 1);
+		return (-1);
+	}	
+	push_swap(argc, argv);
+	return (0);
 }
